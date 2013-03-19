@@ -7,16 +7,20 @@ Painless OAuth 1 API requests. An IPython, Requests, oauthlib joint.
     pip install ipython
     pip install requests
     pip install requests-oauthlib
-    pip install -e https://github.com/matthewlmcclure/oauth1shell@<TODO>#egg=oauth1shell
+    git clone https://github.com/matthewlmcclure/oauth1shell.git
 
-## Use
+## Configure once
 
+    $ cd oauth1shell
     $ cp config.py.template config.py
     $ vi config.py
     ...
     Insert URLs, OAuth parameter transmission method, and client app
     credentials for your favorite API.
     ...
+
+## Use often
+
     $ ipython -i oauth_1_shell.py
     Python 2.7.3 (default, Sep 15 2012, 19:45:36) 
     Type "copyright", "credits" or "license" for more information.
