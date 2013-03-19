@@ -1,6 +1,11 @@
 # OAuth 1 Shell
 
-Painless OAuth 1 API requests. An IPython, Requests, oauthlib joint.
+Painless OAuth 1 API requests. An [IPython], [Requests], [oauthlib]
+joint.
+
+[IPython]: http://ipython.org/
+[Requests]: http://docs.python-requests.org/en/latest/
+[oauthlib]: https://github.com/idan/oauthlib
 
 ## Install
 
@@ -154,3 +159,7 @@ Painless OAuth 1 API requests. An IPython, Requests, oauthlib joint.
      u'verified': False}
 
     In [3]:
+
+## Acknowledgements
+
+Inspired in part by [curlish](http://pythonhosted.org/curlish/).
