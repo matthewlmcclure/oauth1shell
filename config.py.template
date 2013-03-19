@@ -1,0 +1,18 @@
+from __future__ import unicode_literals
+
+temporary_credentials_url = ''
+user_authorization_url  = ''
+token_credentials_url = ''
+
+# 'AUTH_HEADER', 'BODY', or 'QUERY'
+web_redirection_flow_signature_type = 'BODY'
+resource_signature_type = 'AUTH_HEADER'
+
+client_credentials = {
+    'oauth_token': [''],
+    'oauth_token_secret': ['']
+}
+token_credentials = {
+    'oauth_token': [''],
+    'oauth_token_secret': ['']
+}
