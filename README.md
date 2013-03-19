@@ -19,27 +19,69 @@ Painless OAuth 1 API requests. An IPython, Requests, oauthlib joint.
     credentials for your favorite API.
     ...
 
-## Use often
+## Get token credentials
 
     $ ipython -i oauth_1_shell.py
-    Python 2.7.3 (default, Sep 15 2012, 19:45:36) 
+    Python 2.7.3 (default, Sep 15 2012, 19:45:36)
     Type "copyright", "credits" or "license" for more information.
-    
+
     IPython 0.13.1 -- An enhanced Interactive Python.
     ?         -> Introduction and overview of IPython's features.
     %quickref -> Quick reference.
     help      -> Python's own help system.
     object?   -> Details about 'object', use 'object??' for extra details.
-    1.0.0.127.in-addr.arpa - - [19/Mar/2013 15:24:02] "GET /?oauth_token=eqVHvnd0crpezO7y8L2RWEZqJAIzaxC8T4PUmZ3VzE&oauth_verifier=Vtg4ts8QX0uM13vfZwvpwCcjgJ1HqqFrVkpQgj5HI HTTP/1.1" 200 -
-    ready to make requests like:
+
+    'config.token_credentials' doesn't look usable.
+    Requesting new token credentials.
+
+
+![token-credentials-authorization](./token_credentials_authorization.png)
+
+    ...
+    1.0.0.127.in-addr.arpa - - [19/Mar/2013 16:04:10] "GET /?oauth_token=40sCINyhIF16gHeoYJCMMbIjP3LbuiYrixjcKw1Lu1A&oauth_verifier=yO7QZkcvztrwj7aPAygTZzfem860ys49LA31o9FHKkI HTTP/1.1" 200 -
+    Display your token_credentials with:
+    >>> token_credentials
+
+    Copy token_credentials to config.py to reuse them for future sessions.
+
+    Ready to make requests and display responses like:
     >>> res = requests.get('http://example.com/some/resource', auth=oauth)
     >>> res.json()
     >>> print json.dumps(res.json(), indent=2)
-    
+
+    In [1]:
+
+## Use often
+
+    $ ipython -i oauth_1_shell.py
+    Python 2.7.3 (default, Sep 15 2012, 19:45:36)
+    Type "copyright", "credits" or "license" for more information.
+
+    IPython 0.13.1 -- An enhanced Interactive Python.
+    ?         -> Introduction and overview of IPython's features.
+    %quickref -> Quick reference.
+    help      -> Python's own help system.
+    object?   -> Details about 'object', use 'object??' for extra details.
+
+    Using existing 'config.token_credentials'.
+
+    To request new token credentials, delete token_credentials from
+    config.py and re-run.
+
+    Display your token_credentials with:
+    >>> token_credentials
+
+    Copy token_credentials to config.py to reuse them for future sessions.
+
+    Ready to make requests and display responses like:
+    >>> res = requests.get('http://example.com/some/resource', auth=oauth)
+    >>> res.json()
+    >>> print json.dumps(res.json(), indent=2)
+
     In [1]: res = requests.get('https://api.twitter.com/1.1/users/show.json?screen_name=kennethreitz', auth=oauth)
-    
+
     In [2]: res.json()
-    Out[2]: 
+    Out[2]:
     {u'contributors_enabled': False,
      u'created_at': u'Wed Jun 24 23:28:06 +0000 2009',
      u'default_profile': False,
@@ -110,5 +152,5 @@ Painless OAuth 1 API requests. An IPython, Requests, oauthlib joint.
      u'url': u'http://t.co/iBG2asC4',
      u'utc_offset': -18000,
      u'verified': False}
-    
-    In [3]:     
+
+    In [3]:
