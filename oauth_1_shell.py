@@ -2,6 +2,7 @@
 
 from __future__ import unicode_literals
 import json
+import sys
 import urlparse
 import webbrowser
 
@@ -9,7 +10,14 @@ from oauthlib.oauth1.rfc5849.utils import escape
 import requests
 from requests_oauthlib import OAuth1
 
-import config
+def usage():
+    print "Usage: ipython -i {0} <config>".format(sys.argv[0])
+
+try:
+    config = __import__(sys.argv[1])
+except:
+    usage()
+    sys.exit(1)
 
 print
 
@@ -84,7 +92,8 @@ else:
 print "Display your token_credentials with:"
 print ">>> token_credentials"
 print
-print "Copy token_credentials to config.py to reuse them for future sessions."
+print ("Copy token_credentials to {0}.py to reuse them for future "
+       "sessions.".format(sys.argv[1]))
 print
 
 oauth = OAuth1(config.client_credentials['oauth_token'][0],

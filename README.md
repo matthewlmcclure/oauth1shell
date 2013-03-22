@@ -26,7 +26,7 @@ joint.
 
 ## Get token credentials
 
-    $ ipython -i oauth_1_shell.py
+    $ ipython -i oauth_1_shell.py config
     Python 2.7.3 (default, Sep 15 2012, 19:45:36)
     Type "copyright", "credits" or "license" for more information.
 
@@ -58,7 +58,7 @@ joint.
 
 ## Use often
 
-    $ ipython -i oauth_1_shell.py
+    $ ipython -i oauth_1_shell.py config
     Python 2.7.3 (default, Sep 15 2012, 19:45:36)
     Type "copyright", "credits" or "license" for more information.
 
